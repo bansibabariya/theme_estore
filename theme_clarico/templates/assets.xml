@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="theme_assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/theme_clarico/static/src/scss/mixins.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/theme_clarico/static/src/scss/snippets.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/theme_clarico/static/src/scss/customise_option.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/theme_clarico/static/src/scss/layout.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/theme_clarico/static/src/scss/megamenu.scss"/>
+            <!-- AOS animations -->
+            <link rel="stylesheet" href="/theme_clarico/static/lib/aos/aos.css" />
+        </xpath>
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/theme_clarico/static/src/js/frontend/theme_script.js"/>
+        </xpath>
+    </template>
+
+    <template id="theme_customize_options" inherit_id="web._assets_primary_variables">
+        <xpath expr="//link" position="after">
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/src/scss/theme_color.scss" />
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/src/scss/customise_variables.scss" />
+        </xpath>
+    </template>
+    <template id="theme_fonts" inherit_id="web._assets_frontend_helpers">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/para_size.scss" />
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/variables.scss" />
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/button.scss" />
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/heading_size.scss" />
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/link_color.scss" />
+        </xpath>
+    </template>
+    <template id="theme_custom_fonts" inherit_id="website._assets_primary_variables">
+        <xpath expr="//link" position="before">
+            <link rel="stylesheet" type="text/scss"
+				href="/theme_clarico/static/lib/theme/fonts.scss" />
+        </xpath>
+    </template>
+
+    <template id="theme_clarico_inherit_layout" inherit_id="portal.frontend_layout">
+        <xpath expr="//footer" position="after">
+            <!-- AOS animations -->
+            <script src="/theme_clarico/static/lib/aos/aos.js"></script>
+            <script>
+				AOS.init({
+			  		easing: 'ease-out-back',
+					duration: 1500,
+					offset: 0,
+				});
+			</script>
+        </xpath>
+    </template>
+
+</odoo>
